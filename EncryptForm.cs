@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EncryptAlgorithm
 {
-    public partial class Form1 : Form
+    public partial class EncryptForm : Form
     {
-        public Form1()
+        public EncryptForm()
         {
             InitializeComponent();
         }
