@@ -19,7 +19,7 @@ namespace EncryptAlgorithm.model
             key = s.ToUpper();
         }
 
-        string stringForEncrypt = "AĂÂBCDĐEÊGHIKLMNOÔƠPQRSTUƯVXY @#$%?!ÁÀẢẠÃẮẰẲẴẶẤẦẨẪẬÉÈẺẼẸẾỀỂỄỆÍÌỈĨỊÓÒÕỎỌỐỒỖỔỘỚỜỠỞỢÚÙỦŨỤỨỪỮỬỰÝỲỸỶỴa";
+        string stringForEncrypt = "AĂÂBCDĐEÊGHIKLMNOÔƠPQRSTUƯVXY @#$%?!ÁÀẢẠÃẮẰẲẴẶẤẦẨẪẬÉÈẺẼẸẾỀỂỄỆÍÌỈĨỊÓÒÕỎỌỐỒỖỔỘỚỜỠỞỢÚÙỦŨỤỨỪỮỬỰÝỲỸỶỴaăâbcdđeêghiklmnoôơpqrstuưvxyáàảạãắằẳẵặấầẩẫậéèẻẽẹếềểễệíìỉĩịóòõỏọốồỗổộớờỡởợúùủũụứừữửựýỳỹỷỵ";
 
         public int[] getArrayOfIndexFromString(string s)
         {
