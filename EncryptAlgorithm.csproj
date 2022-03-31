@@ -52,8 +52,8 @@
     <Compile Include="EncryptForm.Designer.cs">
       <DependentUpon>EncryptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="model\RSAEncryption.cs" />
-    <Compile Include="model\Vigener.cs" />
+    <Compile Include="helpers\RSAEncryption.cs" />
+    <Compile Include="helpers\Vigener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="EncryptForm.resx">

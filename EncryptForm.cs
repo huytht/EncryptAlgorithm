@@ -15,6 +15,7 @@ namespace EncryptAlgorithm
     public partial class EncryptForm : Form
     {
         Vigener vigener = new Vigener(String.Empty);
+
         public EncryptForm()
         {
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -62,22 +63,14 @@ namespace EncryptAlgorithm
             }
         }
 
-        #region BienTrungGian
-        RSACryptoServiceProvider rsa = new RSACryptoServiceProvider();
-        byte[] plainTextRSA;
-        byte[] cipherTextRSA;
-        #endregion
+        RSAKey rsaKey = new RSAKey(string.Empty, string.Empty);
 
         private void btnEncryptRSA_Click(object sender, EventArgs e)
         {
+            rsaKey = RSAEncryption.GenerateKeys(1024);
             if (txtPlainTextRSA.Text.Length > 0 && txtPlainTextRSA.Text.Trim() != "")
             {
-                plainTextRSA = Encoding.UTF8.GetBytes(txtPlainTextRSA.Text);
-                cipherTextRSA = RSAEncryption.Encrypt(plainTextRSA, rsa.ExportParameters(false), false);
-                StringBuilder sbHash = new StringBuilder();
-                foreach (byte b in cipherTextRSA)
-                    sbHash.Append(String.Format("{0:x2}", b));
-                txtCipherTextRSA.Text = sbHash.ToString();
+                txtCipherTextRSA.Text = RSAEncryption.Encrypt(rsaKey.publicKey, txtPlainTextRSA.Text);
             }
             else
             {
@@ -90,8 +83,7 @@ namespace EncryptAlgorithm
         {
             if (txtCipherTextRSA.Text.Length > 0 && txtCipherTextRSA.Text.Trim() != "")
             {
-                byte[] decryptText = RSAEncryption.Decrypt(cipherTextRSA, rsa.ExportParameters(true), false);
-                txtDecryptTextRSA.Text = Encoding.UTF8.GetString(decryptText);
+                txtDecryptTextRSA.Text = RSAEncryption.Decrypt(rsaKey.privateKey, txtCipherTextRSA.Text);
             }
             else
             {
