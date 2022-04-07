@@ -1,21 +1,12 @@
 D:\C-Sharp\EncryptAlgorithm\bin\Debug\EncryptAlgorithm.exe.config
 D:\C-Sharp\EncryptAlgorithm\bin\Debug\EncryptAlgorithm.exe
-D:\C-Sharp\EncryptAlgorithm\bin\Debug\EncryptAlgorithm.pdb
-D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.AssemblyReference.cache
+D:\C-Sharp\EncryptAlgorithm\obj\Debug\helpers\DemoRSAElGamal.baml
+D:\C-Sharp\EncryptAlgorithm\obj\Debug\helpers\DemoRSAElGamal.g.cs
+D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm_MarkupCompile.cache
+D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.g.resources
 D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.EncryptForm.resources
 D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.Properties.Resources.resources
 D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.GenerateResource.cache
 D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.CoreCompileInputs.cache
 D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.exe
 D:\C-Sharp\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.pdb
-D:\Code CN Web\EncryptAlgorithm\bin\Debug\EncryptAlgorithm.exe.config
-D:\Code CN Web\EncryptAlgorithm\bin\Debug\EncryptAlgorithm.exe
-D:\Code CN Web\EncryptAlgorithm\bin\Debug\EncryptAlgorithm.pdb
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.AssemblyReference.cache
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.SuggestedBindingRedirects.cache
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.EncryptForm.resources
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.Properties.Resources.resources
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.GenerateResource.cache
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.csproj.CoreCompileInputs.cache
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.exe
-D:\Code CN Web\EncryptAlgorithm\obj\Debug\EncryptAlgorithm.pdb

@@ -1,0 +1,14 @@
+D:\C-Sharp\EncryptAlgorithm\bin\x64\Debug\EncryptAlgorithm.exe.config
+D:\C-Sharp\EncryptAlgorithm\bin\x64\Debug\EncryptAlgorithm.exe
+D:\C-Sharp\EncryptAlgorithm\bin\x64\Debug\EncryptAlgorithm.pdb
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\helpers\DemoRSAElGamal.baml
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\helpers\DemoRSAElGamal.g.cs
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm_MarkupCompile.cache
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.g.resources
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.EncryptForm.resources
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.Properties.Resources.resources
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.csproj.GenerateResource.cache
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.csproj.CoreCompileInputs.cache
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.exe
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.pdb
+D:\C-Sharp\EncryptAlgorithm\obj\x64\Debug\EncryptAlgorithm.csproj.AssemblyReference.cache
