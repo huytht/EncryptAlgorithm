@@ -1,9 +1,11 @@
-﻿using EncryptAlgorithm.model;
+﻿using EncryptAlgorithm.helpers;
+using EncryptAlgorithm.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -15,6 +17,7 @@ namespace EncryptAlgorithm
     public partial class EncryptForm : Form
     {
         Vigener vigener = new Vigener(String.Empty);
+        static string signFileName = @"D:\C-Sharp\EncryptAlgorithm\files\MyResultSign.txt";
 
         public EncryptForm()
         {
@@ -64,34 +67,6 @@ namespace EncryptAlgorithm
             }
         }
 
-        //RSAKey rsaKey = new RSAKey(string.Empty, string.Empty);
-
-        //private void btnEncryptRSA_Click(object sender, EventArgs e)
-        //{
-        //    rsaKey = RSAEncryption.GenerateKeys(1024);
-        //    if (txtPlainTextRSA.Text.Length > 0 && txtPlainTextRSA.Text.Trim() != "")
-        //    {
-        //        txtCipherTextRSA.Text = RSAEncryption.Encrypt(rsaKey.publicKey, txtPlainTextRSA.Text);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Vui lòng nhập chuỗi cần mã hóa");
-        //    }
-
-        //}
-
-        //private void btnDecryptRSA_Click(object sender, EventArgs e)
-        //{
-        //    if (txtCipherTextRSA.Text.Length > 0 && txtCipherTextRSA.Text.Trim() != "")
-        //    {
-        //        txtDecryptTextRSA.Text = RSAEncryption.Decrypt(rsaKey.privateKey, txtCipherTextRSA.Text);
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Vui lòng nhập chuỗi đã mã hóa");
-        //    }
-        //}
-
         RSAEncryption rsa = new RSAEncryption();
         private void btnEncryptRSA_Click(object sender, EventArgs e)
         {
@@ -139,12 +114,14 @@ namespace EncryptAlgorithm
         private void ResetRSA()
         {
             txtRSANumberP.Text = txtRSANumberQ.Text = txtRSAPhiNumberN.Text = txtRSANumberN.Text = txtRSANumberE.Text = txtRSANumberD.Text = string.Empty;
+            txtRSANumberPSign.Text = txtRSANumberQSign.Text = txtRSANumberPhiNSign.Text = txtRSANumberNSign.Text = txtRSANumberESign.Text = txtRSANumberDSign.Text = string.Empty;
             rsa.existKey = false;
         }
 
         private void EnabledInput(bool enabled)
         {
             txtRSANumberP.Enabled = txtRSANumberQ.Enabled = txtRSAPhiNumberN.Enabled = txtRSANumberN.Enabled = txtRSANumberE.Enabled = txtRSANumberD.Enabled = enabled;
+            txtRSANumberPSign.Enabled = txtRSANumberQSign.Enabled = txtRSANumberPhiNSign.Enabled = txtRSANumberNSign.Enabled = txtRSANumberESign.Enabled = txtRSANumberDSign.Enabled = enabled;
         }
 
         private void btnCreateKey_Click(object sender, EventArgs e)
@@ -229,6 +206,121 @@ namespace EncryptAlgorithm
                 EnabledInput(true);
             }
             ResetRSA();
+        }
+
+        private void rbRandomSign_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbRandomSign.Checked)
+            {
+                btnCreateKeySign.Text = "Tạo khóa ngẫu nhiên";
+                EnabledInput(false);
+            }
+            else
+            {
+                btnCreateKeySign.Text = "Tạo khóa tùy chọn";
+                EnabledInput(true);
+            }
+            ResetRSA();
+        }
+
+        private void btnChooseFileSign_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            txtFileSign.Text = TextFile.OpenFile(openFileDialog1.FileName);
+        }
+
+        private void btnCreateKeySign_Click(object sender, EventArgs e)
+        {
+            if (rbRandomSign.Checked == true && rbOptinalSign.Checked == false)
+            {
+                rsa.numberP = rsa.numberQ = 0;
+                do
+                {
+                    rsa.numberP = rsa.RandomNumber();
+                    rsa.numberQ = rsa.RandomNumber();
+                }
+                while (rsa.numberP == rsa.numberQ || !rsa.checkSNT(rsa.numberP) || !rsa.checkSNT(rsa.numberQ));
+
+                txtRSANumberPSign.Text = rsa.numberP.ToString();
+                txtRSANumberQSign.Text = rsa.numberQ.ToString();
+                rsa.GenerateKey();
+                txtRSANumberPhiNSign.Text = rsa.phiNumberN.ToString();
+                txtRSANumberNSign.Text = rsa.numberN.ToString();
+                txtRSANumberESign.Text = rsa.numberE.ToString();
+                txtRSANumberDSign.Text = rsa.numberD.ToString();
+                rsa.existKey = true;
+            }
+            else
+            {
+                if (rbRandomSign.Checked == false && rbOptinalSign.Checked == true)
+                {
+                    if (txtRSANumberPSign.Text == "" || txtRSANumberQSign.Text == "")
+                        MessageBox.Show("Phải nhập đủ 2 số p và q", "Thông Báo ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else
+                    {
+                        rsa.numberP = int.Parse(txtRSANumberPSign.Text);
+                        rsa.numberQ = int.Parse(txtRSANumberQSign.Text);
+                        if (rsa.numberP == rsa.numberQ)
+                        {
+                            MessageBox.Show("Nhập 2 số nguyên tố khác nhau ", " Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtRSANumberQ.Focus();
+                        }
+                        else
+                        {
+                            if (!rsa.checkSNT(rsa.numberP) || rsa.numberP < 10)
+                            {
+                                MessageBox.Show("Phải nhập số nguyên tố p lớn hơn 10 ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtRSANumberP.Focus();
+                            }
+                            else
+                            {
+                                if (!rsa.checkSNT(rsa.numberQ) || rsa.numberQ < 10)
+                                {
+                                    MessageBox.Show("Phải nhập số nguyên tố q lớn hơn 10 ", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    txtRSANumberQ.Focus();
+                                }
+                                else
+                                {
+                                    rsa.GenerateKey();
+                                    txtRSANumberPhiNSign.Text = rsa.phiNumberN.ToString();
+                                    txtRSANumberNSign.Text = rsa.numberN.ToString();
+                                    txtRSANumberESign.Text = rsa.numberE.ToString();
+                                    txtRSANumberDSign.Text = rsa.numberD.ToString();
+                                    rsa.existKey = true;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        private void btnSign_Click(object sender, EventArgs e)
+        {
+            txtResultFileSign.Text = rsa.Sign(txtFileSign.Text);
+        }
+
+        private void btnCreateTextSign_Click(object sender, EventArgs e)
+        {
+            TextFile.CreateFile(txtResultFileSign.Text, signFileName);
+        }
+
+        private void btnChooseFileVerify_Click(object sender, EventArgs e)
+        {
+            DialogResult result = openFileDialog1.ShowDialog();
+            txtFileVerify.Text = TextFile.OpenFile(openFileDialog1.FileName);
+        }
+
+        private void btnVerify_Click(object sender, EventArgs e)
+        {
+            if (rsa.Verify(txtFileSign.Text, txtFileVerify.Text))
+            {
+                MessageBox.Show("Xác thực thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtResultFileVerify.Text = txtFileSign.Text;
+            }
+            else
+                MessageBox.Show("Xác thực thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

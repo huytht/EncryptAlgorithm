@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EncryptAlgorithm.helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
@@ -159,6 +160,56 @@ namespace EncryptAlgorithm.model
             }
             byte[] decryptedText = Convert.FromBase64String(base64String);
             return Encoding.Unicode.GetString(decryptedText);
+        }
+        public string HashSHA(string textForHash)
+        {
+            SHA256Managed sha256 = new SHA256Managed();
+
+            byte[] input = Encoding.UTF8.GetBytes(textForHash);
+            byte[] result = sha256.ComputeHash(input);
+            StringBuilder sbHash = new StringBuilder();
+            foreach (byte b in result)
+            {
+                sbHash.Append(String.Format("{0:x2}", b));
+            }
+            return sbHash.ToString();
+        }   
+
+        public string Sign(string message)
+        {
+            string textSinged = string.Empty;
+            message = HashSHA(message);
+            if (!existKey)
+                MessageBox.Show("Bạn chưa tạo khóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                try
+                {
+                    textSinged = Encrypt(message);
+                    MessageBox.Show("Ký thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return textSinged;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            return null;
+        }
+
+        public bool Verify(string orginalMessage, string textSigned)
+        {
+            orginalMessage = HashSHA(orginalMessage);
+            if (!existKey)
+                MessageBox.Show("Bạn chưa tạo khóa!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                try
+                {
+                    return orginalMessage == Decrypt(textSigned);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            return false;
         }
     }
 }

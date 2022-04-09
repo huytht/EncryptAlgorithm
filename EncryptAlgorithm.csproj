@@ -76,10 +76,8 @@
     <Compile Include="EncryptForm.Designer.cs">
       <DependentUpon>EncryptForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="helpers\DemoRSAElGamal.xaml.cs">
-      <DependentUpon>DemoRSAElGamal.xaml</DependentUpon>
-    </Compile>
     <Compile Include="helpers\RSAEncryption.cs" />
+    <Compile Include="helpers\TextFile.cs" />
     <Compile Include="helpers\Vigener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,10 +108,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="helpers\DemoRSAElGamal.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Folder Include="files\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

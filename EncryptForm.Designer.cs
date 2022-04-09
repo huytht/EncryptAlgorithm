@@ -30,32 +30,43 @@ namespace EncryptAlgorithm
         private void InitializeComponent()
         {
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label30 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRSANumberQSign = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
+            this.rbRandomSign = new System.Windows.Forms.RadioButton();
+            this.txtRSANumberPhiNSign = new System.Windows.Forms.TextBox();
+            this.rbOptinalSign = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtRSANumberESign = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.txtRSANumberNSign = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.txtRSANumberDSign = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.btnCreateKeySign = new System.Windows.Forms.Button();
+            this.txtRSANumberPSign = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnCreateTextSign = new System.Windows.Forms.Button();
+            this.btnSign = new System.Windows.Forms.Button();
+            this.txtResultFileSign = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txtFileSign = new System.Windows.Forms.TextBox();
+            this.btnChooseFileSign = new System.Windows.Forms.Button();
+            this.label30 = new System.Windows.Forms.Label();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btnVerify = new System.Windows.Forms.Button();
+            this.txtResultFileVerify = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtFileVerify = new System.Windows.Forms.TextBox();
+            this.btnChooseFileVerify = new System.Windows.Forms.Button();
+            this.label31 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -64,13 +75,6 @@ namespace EncryptAlgorithm
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.txtRSANumberE = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtRSANumberN = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnEncryptRSA = new System.Windows.Forms.Button();
@@ -86,14 +90,21 @@ namespace EncryptAlgorithm
             this.rbRandom = new System.Windows.Forms.RadioButton();
             this.txtRSAPhiNumberN = new System.Windows.Forms.TextBox();
             this.rbOptinal = new System.Windows.Forms.RadioButton();
-            this.label37 = new System.Windows.Forms.Label();
-            this.btnCreateKey = new System.Windows.Forms.Button();
-            this.txtRSANumberP = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.txtRSANumberE = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtRSANumberN = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.txtRSANumberD = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.btnCreateKey = new System.Windows.Forms.Button();
+            this.txtRSANumberP = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.txtDecryptVigener = new System.Windows.Forms.TextBox();
@@ -115,15 +126,17 @@ namespace EncryptAlgorithm
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tabPage3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -132,8 +145,9 @@ namespace EncryptAlgorithm
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.groupBox4);
             this.tabPage3.Controls.Add(this.groupBox1);
+            this.tabPage3.Controls.Add(this.groupBox4);
+            this.tabPage3.Controls.Add(this.groupBox9);
             this.tabPage3.Controls.Add(this.label16);
             this.tabPage3.Controls.Add(this.label15);
             this.tabPage3.Controls.Add(this.label14);
@@ -150,232 +164,114 @@ namespace EncryptAlgorithm
             this.tabPage3.Text = "Chữ ký số";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.button4);
-            this.groupBox4.Controls.Add(this.label32);
-            this.groupBox4.Controls.Add(this.textBox7);
-            this.groupBox4.Controls.Add(this.label31);
-            this.groupBox4.Controls.Add(this.button3);
-            this.groupBox4.Controls.Add(this.label30);
-            this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.label29);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.label28);
-            this.groupBox4.Location = new System.Drawing.Point(472, 18);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox4.Size = new System.Drawing.Size(572, 497);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Thực hiện ký";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(387, 433);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(144, 33);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Chọn File";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(8, 438);
-            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(361, 25);
-            this.label32.TabIndex = 13;
-            this.label32.Text = "Chọn file thực hiện kiểm tra chữ ký số: ";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(13, 265);
-            this.textBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(553, 159);
-            this.textBox7.TabIndex = 12;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(8, 222);
-            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(374, 25);
-            this.label31.TabIndex = 11;
-            this.label31.Text = "Tệp chữ ký vào file văn bản được gửi đi:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(236, 162);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 33);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Chọn File";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(8, 167);
-            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(219, 25);
-            this.label30.TabIndex = 9;
-            this.label30.Text = "Chọn file thực hiện ký: ";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(408, 43);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 89);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Reset";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(215, 98);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(169, 32);
-            this.textBox5.TabIndex = 8;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(8, 102);
-            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(201, 25);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "(Y = a^k mod p) Y = ";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(193, 43);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(191, 32);
-            this.textBox4.TabIndex = 6;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(8, 47);
-            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(175, 25);
-            this.label28.TabIndex = 1;
-            this.label28.Text = "Số ngẫu nhiên k = ";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.txtRSANumberQSign);
+            this.groupBox1.Controls.Add(this.label22);
+            this.groupBox1.Controls.Add(this.rbRandomSign);
+            this.groupBox1.Controls.Add(this.txtRSANumberPhiNSign);
+            this.groupBox1.Controls.Add(this.rbOptinalSign);
             this.groupBox1.Controls.Add(this.groupBox2);
-            this.groupBox1.Location = new System.Drawing.Point(19, 18);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.label44);
+            this.groupBox1.Controls.Add(this.btnCreateKeySign);
+            this.groupBox1.Controls.Add(this.txtRSANumberPSign);
+            this.groupBox1.Controls.Add(this.label45);
+            this.groupBox1.Location = new System.Drawing.Point(4, 8);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(445, 497);
-            this.groupBox1.TabIndex = 7;
+            this.groupBox1.Size = new System.Drawing.Size(445, 559);
+            this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo khóa";
             // 
-            // button1
+            // txtRSANumberQSign
             // 
-            this.button1.Location = new System.Drawing.Point(119, 455);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 34);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Tạo khóa ngẫu nhiên";
-            this.button1.UseVisualStyleBackColor = true;
+            this.txtRSANumberQSign.Location = new System.Drawing.Point(247, 113);
+            this.txtRSANumberQSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberQSign.Name = "txtRSANumberQSign";
+            this.txtRSANumberQSign.Size = new System.Drawing.Size(169, 32);
+            this.txtRSANumberQSign.TabIndex = 7;
             // 
-            // groupBox3
+            // label22
             // 
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.textBox6);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Location = new System.Drawing.Point(8, 300);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(419, 133);
-            this.groupBox3.TabIndex = 6;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Private key (x)";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(69, 117);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(167, 25);
+            this.label22.TabIndex = 6;
+            this.label22.Text = "Số nguyên tố q = ";
             // 
-            // label25
+            // rbRandomSign
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(8, 160);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(0, 25);
-            this.label25.TabIndex = 4;
+            this.rbRandomSign.AutoSize = true;
+            this.rbRandomSign.Checked = true;
+            this.rbRandomSign.Location = new System.Drawing.Point(240, 32);
+            this.rbRandomSign.Margin = new System.Windows.Forms.Padding(4);
+            this.rbRandomSign.Name = "rbRandomSign";
+            this.rbRandomSign.Size = new System.Drawing.Size(188, 29);
+            this.rbRandomSign.TabIndex = 9;
+            this.rbRandomSign.TabStop = true;
+            this.rbRandomSign.Text = "Tạo khóa tự động";
+            this.rbRandomSign.UseVisualStyleBackColor = true;
+            this.rbRandomSign.CheckedChanged += new System.EventHandler(this.rbRandomSign_CheckedChanged);
             // 
-            // label26
+            // txtRSANumberPhiNSign
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(29, 101);
-            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(0, 25);
-            this.label26.TabIndex = 2;
+            this.txtRSANumberPhiNSign.Location = new System.Drawing.Point(247, 157);
+            this.txtRSANumberPhiNSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberPhiNSign.Name = "txtRSANumberPhiNSign";
+            this.txtRSANumberPhiNSign.Size = new System.Drawing.Size(169, 32);
+            this.txtRSANumberPhiNSign.TabIndex = 3;
             // 
-            // textBox6
+            // rbOptinalSign
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 46);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(201, 32);
-            this.textBox6.TabIndex = 1;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(8, 49);
-            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(143, 25);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Số nguyên x = ";
+            this.rbOptinalSign.AutoSize = true;
+            this.rbOptinalSign.Location = new System.Drawing.Point(32, 33);
+            this.rbOptinalSign.Margin = new System.Windows.Forms.Padding(4);
+            this.rbOptinalSign.Name = "rbOptinalSign";
+            this.rbOptinalSign.Size = new System.Drawing.Size(197, 29);
+            this.rbOptinalSign.TabIndex = 8;
+            this.rbOptinalSign.TabStop = true;
+            this.rbOptinalSign.Text = "Tạo khóa tùy chọn";
+            this.rbOptinalSign.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtRSANumberESign);
             this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Location = new System.Drawing.Point(8, 47);
+            this.groupBox2.Controls.Add(this.label24);
+            this.groupBox2.Controls.Add(this.label25);
+            this.groupBox2.Controls.Add(this.txtRSANumberNSign);
+            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Location = new System.Drawing.Point(0, 222);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(419, 218);
-            this.groupBox2.TabIndex = 0;
+            this.groupBox2.Size = new System.Drawing.Size(445, 133);
+            this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Public key (p, a, d)";
+            this.groupBox2.Text = "Cặp khóa công khai";
             // 
-            // textBox3
+            // txtRSANumberESign
             // 
-            this.textBox3.Location = new System.Drawing.Point(240, 150);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(169, 32);
-            this.textBox3.TabIndex = 5;
+            this.txtRSANumberESign.Location = new System.Drawing.Point(246, 69);
+            this.txtRSANumberESign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberESign.Name = "txtRSANumberESign";
+            this.txtRSANumberESign.Size = new System.Drawing.Size(170, 32);
+            this.txtRSANumberESign.TabIndex = 6;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(41, 73);
+            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(198, 25);
+            this.label23.TabIndex = 5;
+            this.label23.Text = "Số mũ công khai: e =";
             // 
             // label24
             // 
@@ -383,45 +279,291 @@ namespace EncryptAlgorithm
             this.label24.Location = new System.Drawing.Point(8, 160);
             this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(234, 25);
+            this.label24.Size = new System.Drawing.Size(0, 25);
             this.label24.TabIndex = 4;
-            this.label24.Text = "( d = a^x mod p) Số d =  ";
             // 
-            // textBox2
+            // label25
             // 
-            this.textBox2.Location = new System.Drawing.Point(185, 97);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(169, 32);
-            this.textBox2.TabIndex = 3;
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(29, 101);
+            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(0, 25);
+            this.label25.TabIndex = 2;
             // 
-            // label23
+            // txtRSANumberNSign
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(29, 101);
-            this.label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(148, 25);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "Số (alpha) a =  ";
+            this.txtRSANumberNSign.Location = new System.Drawing.Point(246, 33);
+            this.txtRSANumberNSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberNSign.Name = "txtRSANumberNSign";
+            this.txtRSANumberNSign.Size = new System.Drawing.Size(170, 32);
+            this.txtRSANumberNSign.TabIndex = 1;
             // 
-            // textBox1
+            // label26
             // 
-            this.textBox1.Location = new System.Drawing.Point(185, 46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(169, 32);
-            this.textBox1.TabIndex = 1;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(9, 36);
+            this.label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(236, 25);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Số modun công khai: n = ";
             // 
-            // label22
+            // groupBox3
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(8, 49);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(167, 25);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Số nguyên tố p = ";
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label32);
+            this.groupBox3.Controls.Add(this.txtRSANumberDSign);
+            this.groupBox3.Controls.Add(this.label43);
+            this.groupBox3.Location = new System.Drawing.Point(0, 353);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Size = new System.Drawing.Size(445, 133);
+            this.groupBox3.TabIndex = 6;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Khóa bí mật";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(8, 160);
+            this.label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(0, 25);
+            this.label27.TabIndex = 4;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(29, 101);
+            this.label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(0, 25);
+            this.label32.TabIndex = 2;
+            // 
+            // txtRSANumberDSign
+            // 
+            this.txtRSANumberDSign.Location = new System.Drawing.Point(236, 49);
+            this.txtRSANumberDSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberDSign.Name = "txtRSANumberDSign";
+            this.txtRSANumberDSign.Size = new System.Drawing.Size(180, 32);
+            this.txtRSANumberDSign.TabIndex = 1;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(29, 52);
+            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(200, 25);
+            this.label43.TabIndex = 0;
+            this.label43.Text = "de ≡ 1 mod Ф(n): d =";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(4, 161);
+            this.label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(234, 25);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Ф(n) = (p - 1) * (q - 1) = ";
+            // 
+            // btnCreateKeySign
+            // 
+            this.btnCreateKeySign.Location = new System.Drawing.Point(162, 505);
+            this.btnCreateKeySign.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateKeySign.Name = "btnCreateKeySign";
+            this.btnCreateKeySign.Size = new System.Drawing.Size(232, 34);
+            this.btnCreateKeySign.TabIndex = 5;
+            this.btnCreateKeySign.Text = "Tạo khóa ngẫu nhiên";
+            this.btnCreateKeySign.UseVisualStyleBackColor = true;
+            this.btnCreateKeySign.Click += new System.EventHandler(this.btnCreateKeySign_Click);
+            // 
+            // txtRSANumberPSign
+            // 
+            this.txtRSANumberPSign.Location = new System.Drawing.Point(246, 69);
+            this.txtRSANumberPSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberPSign.Name = "txtRSANumberPSign";
+            this.txtRSANumberPSign.Size = new System.Drawing.Size(169, 32);
+            this.txtRSANumberPSign.TabIndex = 1;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(69, 75);
+            this.label45.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(167, 25);
+            this.label45.TabIndex = 0;
+            this.label45.Text = "Số nguyên tố p = ";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnCreateTextSign);
+            this.groupBox4.Controls.Add(this.btnSign);
+            this.groupBox4.Controls.Add(this.txtResultFileSign);
+            this.groupBox4.Controls.Add(this.label28);
+            this.groupBox4.Controls.Add(this.txtFileSign);
+            this.groupBox4.Controls.Add(this.btnChooseFileSign);
+            this.groupBox4.Controls.Add(this.label30);
+            this.groupBox4.Location = new System.Drawing.Point(456, 18);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox4.Size = new System.Drawing.Size(590, 232);
+            this.groupBox4.TabIndex = 21;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Ký văn bản";
+            // 
+            // btnCreateTextSign
+            // 
+            this.btnCreateTextSign.Location = new System.Drawing.Point(286, 176);
+            this.btnCreateTextSign.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateTextSign.Name = "btnCreateTextSign";
+            this.btnCreateTextSign.Size = new System.Drawing.Size(144, 33);
+            this.btnCreateTextSign.TabIndex = 19;
+            this.btnCreateTextSign.Text = "Xuất kết quả";
+            this.btnCreateTextSign.UseVisualStyleBackColor = true;
+            this.btnCreateTextSign.Click += new System.EventHandler(this.btnCreateTextSign_Click);
+            // 
+            // btnSign
+            // 
+            this.btnSign.Location = new System.Drawing.Point(438, 176);
+            this.btnSign.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSign.Name = "btnSign";
+            this.btnSign.Size = new System.Drawing.Size(144, 33);
+            this.btnSign.TabIndex = 18;
+            this.btnSign.Text = "Ký văn bản";
+            this.btnSign.UseVisualStyleBackColor = true;
+            this.btnSign.Click += new System.EventHandler(this.btnSign_Click);
+            // 
+            // txtResultFileSign
+            // 
+            this.txtResultFileSign.Location = new System.Drawing.Point(96, 77);
+            this.txtResultFileSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResultFileSign.Multiline = true;
+            this.txtResultFileSign.Name = "txtResultFileSign";
+            this.txtResultFileSign.Size = new System.Drawing.Size(486, 92);
+            this.txtResultFileSign.TabIndex = 17;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(9, 80);
+            this.label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(81, 25);
+            this.label28.TabIndex = 16;
+            this.label28.Text = "Kết quả";
+            // 
+            // txtFileSign
+            // 
+            this.txtFileSign.Location = new System.Drawing.Point(96, 30);
+            this.txtFileSign.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFileSign.Multiline = true;
+            this.txtFileSign.Name = "txtFileSign";
+            this.txtFileSign.Size = new System.Drawing.Size(334, 34);
+            this.txtFileSign.TabIndex = 15;
+            // 
+            // btnChooseFileSign
+            // 
+            this.btnChooseFileSign.Location = new System.Drawing.Point(438, 30);
+            this.btnChooseFileSign.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChooseFileSign.Name = "btnChooseFileSign";
+            this.btnChooseFileSign.Size = new System.Drawing.Size(144, 36);
+            this.btnChooseFileSign.TabIndex = 10;
+            this.btnChooseFileSign.Text = "Chọn File";
+            this.btnChooseFileSign.UseVisualStyleBackColor = true;
+            this.btnChooseFileSign.Click += new System.EventHandler(this.btnChooseFileSign_Click);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(9, 33);
+            this.label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(84, 25);
+            this.label30.TabIndex = 9;
+            this.label30.Text = "Văn bản";
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.btnVerify);
+            this.groupBox9.Controls.Add(this.txtResultFileVerify);
+            this.groupBox9.Controls.Add(this.label29);
+            this.groupBox9.Controls.Add(this.txtFileVerify);
+            this.groupBox9.Controls.Add(this.btnChooseFileVerify);
+            this.groupBox9.Controls.Add(this.label31);
+            this.groupBox9.Location = new System.Drawing.Point(456, 267);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox9.Size = new System.Drawing.Size(590, 232);
+            this.groupBox9.TabIndex = 20;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Xác thực chữ ký";
+            // 
+            // btnVerify
+            // 
+            this.btnVerify.Location = new System.Drawing.Point(438, 176);
+            this.btnVerify.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVerify.Name = "btnVerify";
+            this.btnVerify.Size = new System.Drawing.Size(144, 33);
+            this.btnVerify.TabIndex = 18;
+            this.btnVerify.Text = "Xác thực";
+            this.btnVerify.UseVisualStyleBackColor = true;
+            this.btnVerify.Click += new System.EventHandler(this.btnVerify_Click);
+            // 
+            // txtResultFileVerify
+            // 
+            this.txtResultFileVerify.Location = new System.Drawing.Point(96, 77);
+            this.txtResultFileVerify.Margin = new System.Windows.Forms.Padding(4);
+            this.txtResultFileVerify.Multiline = true;
+            this.txtResultFileVerify.Name = "txtResultFileVerify";
+            this.txtResultFileVerify.Size = new System.Drawing.Size(486, 92);
+            this.txtResultFileVerify.TabIndex = 17;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(9, 80);
+            this.label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(81, 25);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "Kết quả";
+            // 
+            // txtFileVerify
+            // 
+            this.txtFileVerify.Location = new System.Drawing.Point(96, 30);
+            this.txtFileVerify.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFileVerify.Multiline = true;
+            this.txtFileVerify.Name = "txtFileVerify";
+            this.txtFileVerify.Size = new System.Drawing.Size(334, 34);
+            this.txtFileVerify.TabIndex = 15;
+            // 
+            // btnChooseFileVerify
+            // 
+            this.btnChooseFileVerify.Location = new System.Drawing.Point(438, 30);
+            this.btnChooseFileVerify.Margin = new System.Windows.Forms.Padding(4);
+            this.btnChooseFileVerify.Name = "btnChooseFileVerify";
+            this.btnChooseFileVerify.Size = new System.Drawing.Size(144, 36);
+            this.btnChooseFileVerify.TabIndex = 10;
+            this.btnChooseFileVerify.Text = "Chọn File";
+            this.btnChooseFileVerify.UseVisualStyleBackColor = true;
+            this.btnChooseFileVerify.Click += new System.EventHandler(this.btnChooseFileVerify_Click);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(9, 33);
+            this.label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(84, 25);
+            this.label31.TabIndex = 9;
+            this.label31.Text = "Văn bản";
             // 
             // label16
             // 
@@ -495,7 +637,6 @@ namespace EncryptAlgorithm
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox7);
             this.tabPage2.Controls.Add(this.groupBox8);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
@@ -506,77 +647,6 @@ namespace EncryptAlgorithm
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "RSA";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.txtRSANumberE);
-            this.groupBox7.Controls.Add(this.label42);
-            this.groupBox7.Controls.Add(this.label36);
-            this.groupBox7.Controls.Add(this.label39);
-            this.groupBox7.Controls.Add(this.txtRSANumberN);
-            this.groupBox7.Controls.Add(this.label40);
-            this.groupBox7.Location = new System.Drawing.Point(4, 212);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox7.Size = new System.Drawing.Size(445, 133);
-            this.groupBox7.TabIndex = 7;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Cặp khóa công khai";
-            // 
-            // txtRSANumberE
-            // 
-            this.txtRSANumberE.Location = new System.Drawing.Point(246, 69);
-            this.txtRSANumberE.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRSANumberE.Name = "txtRSANumberE";
-            this.txtRSANumberE.Size = new System.Drawing.Size(170, 32);
-            this.txtRSANumberE.TabIndex = 6;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(41, 73);
-            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(198, 25);
-            this.label42.TabIndex = 5;
-            this.label42.Text = "Số mũ công khai: e =";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(8, 160);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(0, 25);
-            this.label36.TabIndex = 4;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(29, 101);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(0, 25);
-            this.label39.TabIndex = 2;
-            // 
-            // txtRSANumberN
-            // 
-            this.txtRSANumberN.Location = new System.Drawing.Point(246, 33);
-            this.txtRSANumberN.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRSANumberN.Name = "txtRSANumberN";
-            this.txtRSANumberN.Size = new System.Drawing.Size(170, 32);
-            this.txtRSANumberN.TabIndex = 1;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(9, 36);
-            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(236, 25);
-            this.label40.TabIndex = 0;
-            this.label40.Text = "Số modun công khai: n = ";
             // 
             // groupBox8
             // 
@@ -595,7 +665,7 @@ namespace EncryptAlgorithm
             this.groupBox8.Size = new System.Drawing.Size(576, 559);
             this.groupBox8.TabIndex = 20;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "Kết quả";
+            this.groupBox8.Text = "Mã hóa và giải mã";
             // 
             // label7
             // 
@@ -691,10 +761,11 @@ namespace EncryptAlgorithm
             this.groupBox5.Controls.Add(this.rbRandom);
             this.groupBox5.Controls.Add(this.txtRSAPhiNumberN);
             this.groupBox5.Controls.Add(this.rbOptinal);
+            this.groupBox5.Controls.Add(this.groupBox7);
+            this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Controls.Add(this.label37);
             this.groupBox5.Controls.Add(this.btnCreateKey);
             this.groupBox5.Controls.Add(this.txtRSANumberP);
-            this.groupBox5.Controls.Add(this.groupBox6);
             this.groupBox5.Controls.Add(this.label38);
             this.groupBox5.Location = new System.Drawing.Point(4, 8);
             this.groupBox5.Margin = new System.Windows.Forms.Padding(4);
@@ -757,34 +828,76 @@ namespace EncryptAlgorithm
             this.rbOptinal.Text = "Tạo khóa tùy chọn";
             this.rbOptinal.UseVisualStyleBackColor = true;
             // 
-            // label37
+            // groupBox7
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(4, 161);
-            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(234, 25);
-            this.label37.TabIndex = 2;
-            this.label37.Text = "Ф(n) = (p - 1) * (q - 1) = ";
+            this.groupBox7.Controls.Add(this.txtRSANumberE);
+            this.groupBox7.Controls.Add(this.label42);
+            this.groupBox7.Controls.Add(this.label36);
+            this.groupBox7.Controls.Add(this.label39);
+            this.groupBox7.Controls.Add(this.txtRSANumberN);
+            this.groupBox7.Controls.Add(this.label40);
+            this.groupBox7.Location = new System.Drawing.Point(0, 222);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox7.Size = new System.Drawing.Size(445, 133);
+            this.groupBox7.TabIndex = 7;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Cặp khóa công khai";
             // 
-            // btnCreateKey
+            // txtRSANumberE
             // 
-            this.btnCreateKey.Location = new System.Drawing.Point(162, 505);
-            this.btnCreateKey.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCreateKey.Name = "btnCreateKey";
-            this.btnCreateKey.Size = new System.Drawing.Size(232, 34);
-            this.btnCreateKey.TabIndex = 5;
-            this.btnCreateKey.Text = "Tạo khóa ngẫu nhiên";
-            this.btnCreateKey.UseVisualStyleBackColor = true;
-            this.btnCreateKey.Click += new System.EventHandler(this.btnCreateKey_Click);
+            this.txtRSANumberE.Location = new System.Drawing.Point(246, 69);
+            this.txtRSANumberE.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberE.Name = "txtRSANumberE";
+            this.txtRSANumberE.Size = new System.Drawing.Size(170, 32);
+            this.txtRSANumberE.TabIndex = 6;
             // 
-            // txtRSANumberP
+            // label42
             // 
-            this.txtRSANumberP.Location = new System.Drawing.Point(246, 69);
-            this.txtRSANumberP.Margin = new System.Windows.Forms.Padding(4);
-            this.txtRSANumberP.Name = "txtRSANumberP";
-            this.txtRSANumberP.Size = new System.Drawing.Size(169, 32);
-            this.txtRSANumberP.TabIndex = 1;
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(41, 73);
+            this.label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(198, 25);
+            this.label42.TabIndex = 5;
+            this.label42.Text = "Số mũ công khai: e =";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(8, 160);
+            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(0, 25);
+            this.label36.TabIndex = 4;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(29, 101);
+            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(0, 25);
+            this.label39.TabIndex = 2;
+            // 
+            // txtRSANumberN
+            // 
+            this.txtRSANumberN.Location = new System.Drawing.Point(246, 33);
+            this.txtRSANumberN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberN.Name = "txtRSANumberN";
+            this.txtRSANumberN.Size = new System.Drawing.Size(170, 32);
+            this.txtRSANumberN.TabIndex = 1;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(9, 36);
+            this.label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(236, 25);
+            this.label40.TabIndex = 0;
+            this.label40.Text = "Số modun công khai: n = ";
             // 
             // groupBox6
             // 
@@ -792,7 +905,7 @@ namespace EncryptAlgorithm
             this.groupBox6.Controls.Add(this.label34);
             this.groupBox6.Controls.Add(this.txtRSANumberD);
             this.groupBox6.Controls.Add(this.label35);
-            this.groupBox6.Location = new System.Drawing.Point(0, 345);
+            this.groupBox6.Location = new System.Drawing.Point(0, 353);
             this.groupBox6.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Padding = new System.Windows.Forms.Padding(4);
@@ -836,6 +949,35 @@ namespace EncryptAlgorithm
             this.label35.Size = new System.Drawing.Size(200, 25);
             this.label35.TabIndex = 0;
             this.label35.Text = "de ≡ 1 mod Ф(n): d =";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(4, 161);
+            this.label37.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(234, 25);
+            this.label37.TabIndex = 2;
+            this.label37.Text = "Ф(n) = (p - 1) * (q - 1) = ";
+            // 
+            // btnCreateKey
+            // 
+            this.btnCreateKey.Location = new System.Drawing.Point(162, 505);
+            this.btnCreateKey.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateKey.Name = "btnCreateKey";
+            this.btnCreateKey.Size = new System.Drawing.Size(232, 34);
+            this.btnCreateKey.TabIndex = 5;
+            this.btnCreateKey.Text = "Tạo khóa ngẫu nhiên";
+            this.btnCreateKey.UseVisualStyleBackColor = true;
+            this.btnCreateKey.Click += new System.EventHandler(this.btnCreateKey_Click);
+            // 
+            // txtRSANumberP
+            // 
+            this.txtRSANumberP.Location = new System.Drawing.Point(246, 69);
+            this.txtRSANumberP.Margin = new System.Windows.Forms.Padding(4);
+            this.txtRSANumberP.Name = "txtRSANumberP";
+            this.txtRSANumberP.Size = new System.Drawing.Size(169, 32);
+            this.txtRSANumberP.TabIndex = 1;
             // 
             // label38
             // 
@@ -1080,31 +1222,38 @@ namespace EncryptAlgorithm
             this.label21.TabIndex = 0;
             this.label21.Text = "Thông tin thành viên";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFile";
+            // 
             // EncryptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1063, 605);
+            this.ClientSize = new System.Drawing.Size(1066, 605);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EncryptForm";
             this.Text = "DEMO CÁC THUẬT TOÁN MÃ HÓA";
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabPage1.ResumeLayout(false);
@@ -1119,25 +1268,6 @@ namespace EncryptAlgorithm
         #endregion
 
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -1174,13 +1304,6 @@ namespace EncryptAlgorithm
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.RadioButton rbRandom;
@@ -1204,6 +1327,44 @@ namespace EncryptAlgorithm
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox txtRSANumberE;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btnCreateTextSign;
+        private System.Windows.Forms.Button btnSign;
+        private System.Windows.Forms.TextBox txtResultFileSign;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox txtFileSign;
+        private System.Windows.Forms.Button btnChooseFileSign;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button btnVerify;
+        private System.Windows.Forms.TextBox txtResultFileVerify;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtFileVerify;
+        private System.Windows.Forms.Button btnChooseFileVerify;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtRSANumberQSign;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.RadioButton rbRandomSign;
+        private System.Windows.Forms.TextBox txtRSANumberPhiNSign;
+        private System.Windows.Forms.RadioButton rbOptinalSign;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtRSANumberESign;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox txtRSANumberNSign;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox txtRSANumberDSign;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Button btnCreateKeySign;
+        private System.Windows.Forms.TextBox txtRSANumberPSign;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
